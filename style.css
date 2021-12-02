@@ -37,6 +37,11 @@ main {
   flex-direction: row;
 }
 
+line {
+  display: flex;
+  flex-direction: row;
+}
+
 #column {
   display: flex;
   flex-direction: column;
