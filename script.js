@@ -27,6 +27,7 @@ function decrementaNumero() {
   counter.innerText = numero.toString();
 }
 
+
 inputAgreement.addEventListener('change', desbloquearBotao);
 botaoEntrar.addEventListener('click', verificarEmailESenha);
 textArea.addEventListener('keyup', decrementaNumero);
