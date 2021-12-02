@@ -49,12 +49,12 @@ line {
 
 #column2 {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 #column-pai {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
 }
 
 #counter {
