@@ -3,6 +3,8 @@ const inputEmail = document.getElementById('email');
 const inputSenha = document.getElementById('senha');
 const botaoEnviar = document.getElementById('submit-btn');
 const inputAgreement = document.getElementById('agreement');
+const counter = document.getElementById('counter')
+const textArea = document.getElementById('textarea')
 let verificar = false;
 
 function verificarEmailESenha() {
@@ -23,5 +25,17 @@ function desbloquearBotao() {
   }
 }
 
+function decrementaNumero () {
+  console.log('aaaa')
+  const numero = 500 - textArea.value.length
+  counter.innerText = numero.toString()
+}
+
+
+
 inputAgreement.addEventListener('change', desbloquearBotao);
 botaoEntrar.addEventListener('click', verificarEmailESenha);
+textArea.addEventListener('keyup', decrementaNumero)
+
+
+

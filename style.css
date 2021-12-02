@@ -56,3 +56,7 @@ line {
   display: flex;
   flex-direction: row; 
 }
+
+#counter {
+  margin-left: 290px;
+}
