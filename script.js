@@ -30,7 +30,11 @@ function decrementaNumero () {
   const numero = 500 - textArea.value.length
   counter.innerText = numero.toString()
 }
-
+function decrementaNumero() {
+  console.log('aaaa')
+  const numero = 500 - textArea.value.length
+  counter.innerText = numero.toString()
+}
 
 
 inputAgreement.addEventListener('change', desbloquearBotao);
