@@ -1,4 +1,4 @@
-const buttonEnter = document.getElementById('button-enter')
+const buttonEnter = document.getElementById('button-enter');
 const inputEmail = document.getElementById('email');
 const inputSenha = document.getElementById('senha');
 const buttonSend = document.getElementById('submit-btn');
@@ -30,7 +30,7 @@ function unlockButton() {
 
 function decreaseNumber() {
   const numero = 500 - textArea.value.length;
-  counter.innerText = numero
+  counter.innerText = numero;
 }
 
 function familySelected() {
