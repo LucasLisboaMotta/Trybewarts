@@ -51,9 +51,9 @@ function materiasSelecionadas() {
 }
 
 function evaluatedNote() {
-  for (let i = 0; i < evaluation.children[1].children.length; i += 1) {
-    if (evaluation.children[1].children[i].checked) {
-      return evaluation.children[1].children[i].value;
+  for (let i = 0; i < evaluation.children.length; i += 1) {
+    if (evaluation.children[i].checked) {
+      return evaluation.children[i].value;
     }
   }
 }
