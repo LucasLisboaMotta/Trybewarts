@@ -35,12 +35,15 @@ main {
 #line {
   display: flex;
   flex-direction: row;
-  margin-left: 150px;
+  margin-left: 165px;
 }
 
 #line2 {
   display: flex;
   flex-direction: row;
+  margin-left: 165px;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
 }
 
 #line3 {
@@ -107,12 +110,27 @@ line {
   margin-left: 100px;
 }
 
-#input-name , #input-lastname {
+#input-name , #input-lastname, #input-email, #house {
   margin-left: 5px;
+  margin-bottom: 5px;
   width: 250px;
   height: 40px;
   border-radius: 5px;
   border: none;
+}
+
+#house {
+  margin-left: 5px;
+  margin-bottom: 5px;
+  width: 220px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+
+#label-house {
+  margin-top: 10px;
+  margin-left: 3px;
 }
 
 #cabeçalho-form {
