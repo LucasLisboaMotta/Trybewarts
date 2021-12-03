@@ -34,26 +34,26 @@ function decreaseNumber() {
 }
 
 function familySelected() {
-  for (let i = 0; i < family.children.length; i += 1) {
-    if (family.children[i].checked) {
-      return family.children[i].value;
+  for (let i = 1; i < family.children.length; i += 1) {
+    if (family.children[i].children[0].checked) {
+      return family.children[i].children[0].value;
     }
   }
 }
 
 function materiasSelecionadas() {
   const materias = [];
-  for (let i = 0; i < subjects.children.length; i += 1) {
-    if (subjects.children[i].checked) {
-      materias.push(subjects.children[i].value);
+  for (let i = 1; i < subjects.children.length; i += 1) {
+    if (subjects.children[i].children[0].checked) {
+      materias.push(subjects.children[i].children[0].value);
     }
   } return materias.join(', ');
 }
 
 function evaluatedNote() {
-  for (let i = 0; i < evaluation.children.length; i += 1) {
-    if (evaluation.children[i].checked) {
-      return evaluation.children[i].value;
+  for (let i = 0; i < evaluation.children[1].children.length; i += 1) {
+    if (evaluation.children[1].children[i].checked) {
+      return evaluation.children[1].children[i].value;
     }
   }
 }
