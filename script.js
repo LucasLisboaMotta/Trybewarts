@@ -5,6 +5,12 @@ const botaoEnviar = document.getElementById('submit-btn');
 const inputAgreement = document.getElementById('agreement');
 const counter = document.getElementById('counter');
 const textArea = document.getElementById('textarea');
+const select = document.getElementById('house');
+const family = document.getElementById('column');
+const subjects = document.getElementById('column2');
+const evaluation = document.getElementById('line3');
+const list = document.getElementById('lista-pronta');
+const bntSubmit = document.getElementById('submit-btn');
 
 function verificarEmailESenha() {
   if (inputSenha.value === '123456' && inputEmail.value === 'tryber@teste.com') {
@@ -27,6 +33,52 @@ function decrementaNumero() {
   counter.innerText = numero.toString();
 }
 
+function familiaSelecionada() {
+  for (let i = 0; i < family.children.length; i += 1) {
+    if (family.children[i].checked) {
+      return family.children[i].value;
+    }
+  }
+}
+
+function materiasSelecionadas() {
+  const materias = [];
+  for (let i = 0; i < subjects.children.length; i += 1) {
+    if (subjects.children[i].checked) {
+      materias.push(subjects.children[i].value);
+    }
+  } return materias.join(', ');
+}
+
+function notaAvaliada() {
+  for (let i = 0; i < evaluation.children.length; i += 1) {
+    if (evaluation.children[i].checked) {
+      return evaluation.children[i].value;
+    }
+  }
+}
+
+function retornaLista(evento) {
+  evento.preventDefault();
+  const nome = document.getElementById('input-name').value;
+  const sobrenome = document.getElementById('input-lastname').value;
+  const email = document.getElementById('input-email').value;
+  const casa = select.options[select.selectedIndex].value;
+  const familia = familiaSelecionada();
+  const materias = materiasSelecionadas();
+  const avaliacao = notaAvaliada();
+  const observacao = textArea.value;
+
+  list.children[0].innerText = `Nome: ${nome} ${sobrenome}`;
+  list.children[1].innerText = `Email: ${email}`;
+  list.children[2].innerText = `Casa: ${casa}`;
+  list.children[3].innerText = `Família: ${familia}`;
+  list.children[4].innerText = `Matérias: ${materias}`;
+  list.children[5].innerText = `Avaliação: ${avaliacao}`;
+  list.children[6].innerText = `Observações: ${observacao}`;
+}
+
 inputAgreement.addEventListener('change', desbloquearBotao);
 botaoEntrar.addEventListener('click', verificarEmailESenha);
 textArea.addEventListener('keyup', decrementaNumero);
+bntSubmit.addEventListener('click', retornaLista);
