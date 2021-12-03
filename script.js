@@ -1,7 +1,7 @@
-const botaoEntrar = document.getElementsByTagName('button')[0];
+const buttonEnter = document.getElementById('button-enter')
 const inputEmail = document.getElementById('email');
 const inputSenha = document.getElementById('senha');
-const botaoEnviar = document.getElementById('submit-btn');
+const buttonSend = document.getElementById('submit-btn');
 const inputAgreement = document.getElementById('agreement');
 const counter = document.getElementById('counter');
 const textArea = document.getElementById('textarea');
@@ -12,7 +12,7 @@ const evaluation = document.getElementById('line3');
 const list = document.getElementById('lista-pronta');
 const bntSubmit = document.getElementById('submit-btn');
 
-function verificarEmailESenha() {
+function checkEmailAndPassword() {
   if (inputSenha.value === '123456' && inputEmail.value === 'tryber@teste.com') {
     alert('Olá, Tryber!');
   } else {
@@ -20,20 +20,20 @@ function verificarEmailESenha() {
   }
 }
 
-function desbloquearBotao() {
-  if (botaoEnviar.disabled) {
-    botaoEnviar.disabled = false;
+function unlockButton() {
+  if (buttonSend.disabled) {
+    buttonSend.disabled = false;
   } else {
-    botaoEnviar.disabled = true;
+    buttonSend.disabled = true;
   }
 }
 
-function decrementaNumero() {
+function decreaseNumber() {
   const numero = 500 - textArea.value.length;
-  counter.innerText = numero.toString();
+  counter.innerText = numero
 }
 
-function familiaSelecionada() {
+function familySelected() {
   for (let i = 0; i < family.children.length; i += 1) {
     if (family.children[i].checked) {
       return family.children[i].value;
@@ -50,7 +50,7 @@ function materiasSelecionadas() {
   } return materias.join(', ');
 }
 
-function notaAvaliada() {
+function evaluatedNote() {
   for (let i = 0; i < evaluation.children.length; i += 1) {
     if (evaluation.children[i].checked) {
       return evaluation.children[i].value;
@@ -58,15 +58,15 @@ function notaAvaliada() {
   }
 }
 
-function retornaLista(evento) {
+function returnList(evento) {
   evento.preventDefault();
   const nome = document.getElementById('input-name').value;
   const sobrenome = document.getElementById('input-lastname').value;
   const email = document.getElementById('input-email').value;
   const casa = select.options[select.selectedIndex].value;
-  const familia = familiaSelecionada();
+  const familia = familySelected();
   const materias = materiasSelecionadas();
-  const avaliacao = notaAvaliada();
+  const avaliacao = evaluatedNote();
   const observacao = textArea.value;
 
   list.children[0].innerText = `Nome: ${nome} ${sobrenome}`;
@@ -78,7 +78,7 @@ function retornaLista(evento) {
   list.children[6].innerText = `Observações: ${observacao}`;
 }
 
-inputAgreement.addEventListener('change', desbloquearBotao);
-botaoEntrar.addEventListener('click', verificarEmailESenha);
-textArea.addEventListener('keyup', decrementaNumero);
-bntSubmit.addEventListener('click', retornaLista);
+inputAgreement.addEventListener('change', unlockButton);
+buttonEnter.addEventListener('click', checkEmailAndPassword);
+textArea.addEventListener('keyup', decreaseNumber);
+bntSubmit.addEventListener('click', returnList);
