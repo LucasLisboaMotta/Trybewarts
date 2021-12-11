@@ -69,13 +69,13 @@ function returnList(evento) {
   const avaliacao = evaluatedNote();
   const observacao = textArea.value;
 
-  list.children[0].innerText = `Nome: ${nome} ${sobrenome}`;
-  list.children[1].innerText = `Email: ${email}`;
-  list.children[2].innerText = `Casa: ${casa}`;
-  list.children[3].innerText = `Família: ${familia}`;
-  list.children[4].innerText = `Matérias: ${materias}`;
-  list.children[5].innerText = `Avaliação: ${avaliacao}`;
-  list.children[6].innerText = `Observações: ${observacao}`;
+  list.children[1].innerText = `Nome: ${nome} ${sobrenome}`;
+  list.children[2].innerText = `Email: ${email}`;
+  list.children[3].innerText = `Casa: ${casa}`;
+  list.children[4].innerText = `Família: ${familia}`;
+  list.children[5].innerText = `Matérias: ${materias}`;
+  list.children[6].innerText = `Avaliação: ${avaliacao}`;
+  list.children[7].innerText = `Observações: ${observacao}`;
 }
 
 inputAgreement.addEventListener('change', unlockButton);
